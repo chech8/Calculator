@@ -1,7 +1,6 @@
-import InputKey from '../components/InputKey.tsx'
+import InputKey from '../components/InputKey.tsx';
 
 function KeyPad(props){
-	const passSetData = props.setData;
 	const keyLayout =
 		[['',   '',    'Del', 'AC'],
 		['7',   '8',   '9',   '/'],
@@ -17,9 +16,9 @@ function KeyPad(props){
 			rowItems.push(<InputKey char={keyLayout[row][index]}/>);
 		}
 		keyRows.push(rowItems);
-		keyRows.push(<div className="key-row" setData={props.setData} />)
+		keyRows.push(<div className="key-row" />)
 	}
-	keyRows.push(<button onClick={() => props.setData(1)}>debug</button>)
+	//keyRows.push(<button onClick={() => props.setData(1)}>debug</button>)
 
 	return keyRows;
 }
