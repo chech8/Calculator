@@ -1,0 +1,22 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "code": "ELIFECYCLE",
+    "errno": "ENOENT",
+    "syscall": "spawn",
+    "file": "sh",
+    "pkgid": "calculator@0.1.0",
+    "stage": "dev",
+    "script": "next dev",
+    "pkgname": "calculator",
+    "err": {
+      "name": "Error",
+      "message": "calculator@0.1.0 dev: `next dev`\nspawn ENOENT",
+      "code": "ELIFECYCLE",
+      "stack": "Error: calculator@0.1.0 dev: `next dev`\nspawn ENOENT\n    at ChildProcess.<anonymous> (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:93167:22)\n    at ChildProcess.emit (events.js:314:20)\n    at maybeClose (internal/child_process.js:1022:16)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:287:5)"
+    }
+  },
+  "2 warn pnpm:global": " Local package.json exists, but node_modules missing, did you mean to install?"
+}
