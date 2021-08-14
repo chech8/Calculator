@@ -1,5 +1,5 @@
 function Display(props){
-	return <div className="display">5318008</div>;
+	return <div className="display">{props.data}</div>;
 }
 
 export default Display

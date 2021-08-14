@@ -4,6 +4,7 @@ function InputKey(props){
 		className="input-key"
 		label={props.char}
 		value={props.char}
+		onClick={() => props.setData(1)}
 	/>;
 }
 

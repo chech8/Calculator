@@ -1,7 +1,7 @@
-import { useState } from "react";
 import InputKey from '../components/InputKey.tsx'
 
 function KeyPad(props){
+	const passSetData = props.setData;
 	const keyLayout =
 		[['',   '',    'Del', 'AC'],
 		['7',   '8',   '9',   '/'],
@@ -14,11 +14,12 @@ function KeyPad(props){
 	for (let row in keyLayout) {
 		let rowItems = [];
 		for (let index in keyLayout[row]) {
-			rowItems.push(<InputKey char={keyLayout[row][index]} />);
+			rowItems.push(<InputKey char={keyLayout[row][index]}/>);
 		}
 		keyRows.push(rowItems);
-		keyRows.push(<div className="key-row" />)
+		keyRows.push(<div className="key-row" setData={props.setData} />)
 	}
+	keyRows.push(<button onClick={() => props.setData(1)}>debug</button>)
 
 	return keyRows;
 }
