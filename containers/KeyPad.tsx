@@ -1,25 +1,26 @@
 import { useState } from "react";
-import Input from '../components/Input.tsx'
+import InputKey from '../components/InputKey.tsx'
 
 function KeyPad(props){
-	const inputChars = [['',    '',    'Del', 'AC'],
-											['7',   '8',   '9',   '/'],
-											['4',   '5',   '6',   '*'],
-											['1',   '2',   '3',   '-'],
-											['0',   '.',   '=',   '+']];
-	const rows = [];
+	const keyLayout =
+		[['',   '',    'Del', 'AC'],
+		['7',   '8',   '9',   '/'],
+		['4',   '5',   '6',   '*'],
+		['1',   '2',   '3',   '-'],
+		['0',   '.',   '=',   '+']];
 
-	for (let row in inputChars) {
+	const keyRows = [];
+
+	for (let row in keyLayout) {
 		let rowItems = [];
-		for (let index in inputChars[row]) {
-			rowItems.push(<button label={inputChars[row][index]}>{inputChars[row][index]}</button>);
-			//rowItems.push(<Input char={inputChars[row][index]} />);
+		for (let index in keyLayout[row]) {
+			rowItems.push(<InputKey char={keyLayout[row][index]} />);
 		}
-		rows.push(rowItems);
-		rows.push(<div className="input-row" />)
+		keyRows.push(rowItems);
+		keyRows.push(<div className="key-row" />)
 	}
 
-	return rows;
+	return keyRows;
 }
 
 export default KeyPad
