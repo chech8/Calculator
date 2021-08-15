@@ -9,7 +9,10 @@ function InputKey(props){
 		className="input-key"
 		label={props.char}
 		value={props.char}
-		onClick={() => dataToSet.setData(props.char)}
+		onClick={() => dataToSet.dataDispatch({
+			type: "setData",
+			input: props.char,
+		})}
 	/>;
 }
 
