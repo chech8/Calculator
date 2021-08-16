@@ -1,12 +1,12 @@
 import InputKey from '../components/InputKey.tsx';
 
 function KeyPad(props){
-	const keyLayout =
-		[['',   '',    'Del', 'AC'],
-		['7',   '8',   '9',   '/'],
-		['4',   '5',   '6',   '*'],
-		['1',   '2',   '3',   '-'],
-		['0',   '.',   '=',   '+']];
+	const keyLayout: number | string =
+		[['', '',  'Del', 'AC'],
+		[7,   8,   9,     '/'],
+		[4,   5,   6,     '*'],
+		[1,   2,   3,     '-'],
+		[0,   '.', '=',   '+']];
 
 	const keyRows = [];
 
