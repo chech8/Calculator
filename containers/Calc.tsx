@@ -1,26 +1,56 @@
 import { useReducer, createContext, useContext, useState } from 'react';
+import { evaluate } from 'mathjs';
 import Display from '../components/Display.tsx';
 import KeyPad from '../containers/KeyPad.tsx';
 import DataStream from '../contexts/DataStream';
 
-const initialState = {
-	data: '',
-	updateRequest: false,
+const initialDataState = {
+	expression: '',
+	result: '',
 };
 
-function reducer(state, action) {
+// Handles functional buttons
+function PerformButtonFunction(input: string, expression: string){
+	let output = {};
+	switch (input) {
+		case "=":
+			output = {
+				expression: expression,
+				result: evaluate(expression),
+			}
+			break;
+
+		case "AC":
+			output.expression = '';
+			break;
+
+		case "Del":
+			output.expression = expression.slice(0, -1);
+			break;
+
+		default:
+			break;
+	}
+
+	return output;
+}
+
+// Updates the dataStream according to the type of the button clicked
+function dataStreamReducer(state, action) {
 	switch (action.type) {
-		case 'setData':
-			return {data: action.input, updateRequest: true};
-		case 'clearRequest':
-			return {updateRequest: false};
+		case "character":
+			return {expression: state.expression.concat(action.input)};
+
+		case "functional":
+			return PerformButtonFunction(action.input, state.expression);
+
 		default:
 			throw new Error();
 	}
 }
 
 function Calc(props){
-	const [dataState, dataDispatch] = useReducer(reducer, initialState);
+	const [dataState, dataDispatch] = useReducer(dataStreamReducer, initialDataState);
 
 	// Links data stream between KeyPad and Display
 	const dataLink = {dataState, dataDispatch};

@@ -21,8 +21,8 @@ a {
 	border-color: black;
 	border-width: 2px;
 	border-radius: 5px;
-	width: 420px;
-	height: 435px;
+	width: auto;
+	height: auto;
 }
 
 .display{
@@ -30,9 +30,13 @@ a {
 	background-color: #F0F0F0;
 	text-align: right;
 	font-size: 42px;
-	height: 48px;
+	height: 100px;
 	width: auto;
 	margin: 6px 2px;
+}
+
+.display-expression{
+	text-align: left;
 }
 
 .input-key{

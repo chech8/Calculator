@@ -5,7 +5,7 @@ Unlike most calculator app examples on the internet, this one is being designed 
 
 ## To-Do
 - Clean up Display state management
-- Prevent the user from using multiple operands in a row
+- Prevent the user from using multiple operands in a row ('Malformed Expression')
 - Text is appended to the result after using '='
 - Stop the calculator from displaying floating point inaccuracies
 - Add docker production
