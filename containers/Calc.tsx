@@ -1,5 +1,5 @@
 import { useReducer, createContext, useContext, useState } from 'react';
-import { evaluate } from 'mathjs';
+import { evaluate, round } from 'mathjs';
 import Display from '../components/Display.tsx';
 import KeyPad from '../containers/KeyPad.tsx';
 import DataStream from '../contexts/DataStream';
@@ -12,11 +12,18 @@ const initialDataState = {
 // Handles functional buttons
 function PerformButtonFunction(input: string, expression: string){
 	let output = {};
+	let temp
 	switch (input) {
 		case "=":
+			try {
+				temp = round(evaluate(expression), 10);
+			}
+			catch (error) {
+				temp = error.name;
+			}
 			output = {
 				expression: expression,
-				result: evaluate(expression),
+				result: temp,
 			}
 			break;
 

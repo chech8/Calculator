@@ -21,22 +21,26 @@ a {
 	border-color: black;
 	border-width: 2px;
 	border-radius: 5px;
-	width: auto;
+	width: 420px;
 	height: auto;
 }
 
 .display{
 	border-radius: 5px;
 	background-color: #F0F0F0;
-	text-align: right;
 	font-size: 42px;
-	height: 100px;
-	width: auto;
+	height: 110px;
+	max-width: 99%;
+	overflow-x: auto;
 	margin: 6px 2px;
 }
 
 .display-expression{
 	text-align: left;
+}
+
+.display-result{
+	text-align: right;
 }
 
 .input-key{
