@@ -1,4 +1,4 @@
-import { useReducer, createContext, useContext, useState } from 'react';
+import { useReducer, useContext } from 'react';
 import { evaluate, round } from 'mathjs';
 import Display from '../components/Display';
 import KeyPad from '../containers/KeyPad';
