@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Stop calculator-app container in case it's running already
+sudo docker stop calculator-app
+
 # Build docker image
 sudo docker build -t calculator .
 
