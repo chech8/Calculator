@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import DataStream from '../contexts/DataStream';
 
-function Display(props){
+
+function Display(){
 	const dataToDisplay = useContext(DataStream);
 
 	return (

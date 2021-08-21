@@ -1,4 +1,5 @@
-import InputKey from '../components/InputKey.tsx';
+import InputKey from '../components/InputKey';
+
 
 const keyLayout =
 	[['(', ')',  'Del', 'AC'],
@@ -9,7 +10,8 @@ const keyLayout =
 
 const functionalKeys = ['=', 'AC', 'Del'];
 
-function KeyPad(props){
+
+function KeyPad(){
 	const keyRows = [];
 
 	for (let row in keyLayout) {
@@ -24,7 +26,11 @@ function KeyPad(props){
 		keyRows.push(<div className="key-row" />)
 	}
 
-	return keyRows;
+	return (
+		<div className="key-pad">
+			{keyRows}
+		</div>
+	);
 }
 
 export default KeyPad

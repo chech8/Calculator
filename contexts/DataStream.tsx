@@ -1,5 +1,15 @@
 import { createContext } from 'react';
 
-const DataStream = createContext(null);
+
+type DATASTREAMTYPE = {
+    dataState: {
+        expression: string,
+        result: string,
+    }
+    dataDispatch: (arg0: { type: string; input: string; }) => void,
+};
+
+
+const DataStream = createContext<DATASTREAMTYPE>({} as DATASTREAMTYPE);
 
 export default DataStream

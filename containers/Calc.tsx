@@ -1,38 +1,56 @@
 import { useReducer, createContext, useContext, useState } from 'react';
 import { evaluate, round } from 'mathjs';
-import Display from '../components/Display.tsx';
-import KeyPad from '../containers/KeyPad.tsx';
+import Display from '../components/Display';
+import KeyPad from '../containers/KeyPad';
 import DataStream from '../contexts/DataStream';
+
+
+type DATATYPE = {
+	expression: string,
+	result: string,
+};
+
+type ACTIONTYPE =
+  | { type: "character"; input: string }
+  | { type: "functional"; input: string };
+
 
 const initialDataState = {
 	expression: '',
 	result: '',
 };
 
+
 // Handles functional buttons
-function PerformButtonFunction(input: string, expression: string){
-	let output = {};
+function PerformButtonFunction(input: string, prevDataState: DATATYPE){
+	let output = prevDataState;
 	let temp
 	switch (input) {
 		case "=":
 			try {
-				temp = round(evaluate(expression), 10);
+				temp = round(evaluate(prevDataState.expression), 10) as string;
 			}
 			catch (error) {
 				temp = error.name;
 			}
 			output = {
-				expression: expression,
+				expression: prevDataState.expression,
 				result: temp,
 			}
 			break;
 
 		case "AC":
-			output.expression = '';
+			output = {
+				expression: '',
+				result: '',
+			}
 			break;
 
 		case "Del":
-			output.expression = expression.slice(0, -1);
+			output = {
+				expression: prevDataState.expression.slice(0, -1),
+				result: '',
+			} 
 			break;
 
 		default:
@@ -43,20 +61,26 @@ function PerformButtonFunction(input: string, expression: string){
 }
 
 // Updates the dataStream according to the type of the button clicked
-function dataStreamReducer(state, action) {
+function dataStreamReducer(state: DATATYPE, action: any) {
+	let output: DATATYPE;
 	switch (action.type) {
 		case "character":
-			return {expression: state.expression.concat(action.input)};
+			output = {
+				expression: state.expression.concat(action.input),
+				result: state.result,
+			};
+			return output;
 
 		case "functional":
-			return PerformButtonFunction(action.input, state.expression);
+			 output = PerformButtonFunction(action.input, state);
+			 return output;
 
 		default:
 			throw new Error();
 	}
 }
 
-function Calc(props){
+function Calc(){
 	const [dataState, dataDispatch] = useReducer(dataStreamReducer, initialDataState);
 
 	// Links data stream between KeyPad and Display

@@ -21,7 +21,7 @@ a {
 	border-color: black;
 	border-width: 2px;
 	border-radius: 5px;
-	width: 420px;
+	width: auto;
 	height: auto;
 }
 
