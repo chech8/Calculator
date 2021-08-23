@@ -13,6 +13,7 @@ const Home: NextPage = () => {
 			</Head>
 
 			<main className={styles.main}>
+				<h1>Calculator</h1>
 				<Calc />
 			</main>
 		</div>
