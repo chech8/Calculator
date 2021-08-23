@@ -17,13 +17,16 @@ function KeyPad(){
 	for (let row in keyLayout) {
 		let rowItems = [];
 		for (let index in keyLayout[row]) {
-			rowItems.push(<InputKey
-				char={keyLayout[row][index]}
-				funcKeys = {functionalKeys}
-			/>);
+			rowItems.push(
+				<InputKey
+					key={keyLayout[row][index]}
+					char={keyLayout[row][index]}
+					funcKeys = {functionalKeys}
+				/>
+			);
 		}
 		keyRows.push(rowItems);
-		keyRows.push(<div className="key-row" />)
+		keyRows.push(<div className="key-row" key={"row_"+row} />)
 	}
 
 	return (
