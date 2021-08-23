@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import DataStream from '../contexts/DataStream';
+import { DataStream } from '../contexts/DataStream';
 
 
 function Display(){

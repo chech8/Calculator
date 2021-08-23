@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import DataStream from '../contexts/DataStream';
+import { DataStream } from '../contexts/DataStream';
 
 
 // Evaluates the type of the button, and returns appropriate action to the
