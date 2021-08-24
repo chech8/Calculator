@@ -9,7 +9,7 @@ type DATASTREAMTYPE = {
     dataDispatch: (arg0: { type: string; input: string; }) => void,
 };
 
-type DATATYPE = {
+export type DATATYPE = {
 	expression: string,
 	result: string,
 };
@@ -20,12 +20,7 @@ type ACTIONTYPE =
 
 type Props = {
     children: ReactNode;
-};
-
-
-const initialDataState: DATATYPE = {
-	expression: '',
-	result: '',
+	initState: DATATYPE;
 };
 
 
@@ -91,12 +86,12 @@ function dataStreamReducer(state: DATATYPE, action: any) {
 const DataStream = createContext<DATASTREAMTYPE>({} as DATASTREAMTYPE);
 
 function DataStreamProvider(props: Props) {
-    let [dataState, dataDispatch] = useReducer(dataStreamReducer, initialDataState);
-	// Links data stream between KeyPad and Display
-	const dataLink = {dataState, dataDispatch};
+    let [dataState, dataDispatch] = useReducer(dataStreamReducer, props.initState);
+
+	const dataValue = {dataState, dataDispatch};
 
     return (
-      <DataStream.Provider value={dataLink}>{props.children}</DataStream.Provider>
+      <DataStream.Provider value={dataValue}>{props.children}</DataStream.Provider>
     );
   }
 
