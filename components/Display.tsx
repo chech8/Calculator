@@ -7,8 +7,12 @@ function Display(){
 
 	return (
 		<div className="display">
-			<div className="display-expression">{dataToDisplay.dataState.expression}</div>
-			<div className="display-result">{dataToDisplay.dataState.result}</div>
+			<div className="display-expression" data-testid="display-expression">
+				{dataToDisplay.dataState.expression}
+			</div>
+			<div className="display-result" data-testid="display-result">
+				{dataToDisplay.dataState.result}
+			</div>
 		</div>
 	);
 }

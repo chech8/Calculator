@@ -18,11 +18,13 @@ exports[`renders homepage unchanged 1`] = `
       >
         <div
           className="display-expression"
+          data-testid="display-expression"
         >
           
         </div>
         <div
           className="display-result"
+          data-testid="display-result"
         >
           
         </div>
