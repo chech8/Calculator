@@ -34,24 +34,28 @@ exports[`renders homepage unchanged 1`] = `
       >
         <input
           className="input-key"
+          data-testid="input-key-("
           onClick={[Function]}
           type="button"
           value="("
         />
         <input
           className="input-key"
+          data-testid="input-key-)"
           onClick={[Function]}
           type="button"
           value=")"
         />
         <input
           className="input-key"
+          data-testid="input-key-Del"
           onClick={[Function]}
           type="button"
           value="Del"
         />
         <input
           className="input-key"
+          data-testid="input-key-AC"
           onClick={[Function]}
           type="button"
           value="AC"
@@ -61,24 +65,28 @@ exports[`renders homepage unchanged 1`] = `
         />
         <input
           className="input-key"
+          data-testid="input-key-7"
           onClick={[Function]}
           type="button"
           value="7"
         />
         <input
           className="input-key"
+          data-testid="input-key-8"
           onClick={[Function]}
           type="button"
           value="8"
         />
         <input
           className="input-key"
+          data-testid="input-key-9"
           onClick={[Function]}
           type="button"
           value="9"
         />
         <input
           className="input-key"
+          data-testid="input-key-/"
           onClick={[Function]}
           type="button"
           value="/"
@@ -88,24 +96,28 @@ exports[`renders homepage unchanged 1`] = `
         />
         <input
           className="input-key"
+          data-testid="input-key-4"
           onClick={[Function]}
           type="button"
           value="4"
         />
         <input
           className="input-key"
+          data-testid="input-key-5"
           onClick={[Function]}
           type="button"
           value="5"
         />
         <input
           className="input-key"
+          data-testid="input-key-6"
           onClick={[Function]}
           type="button"
           value="6"
         />
         <input
           className="input-key"
+          data-testid="input-key-*"
           onClick={[Function]}
           type="button"
           value="*"
@@ -115,24 +127,28 @@ exports[`renders homepage unchanged 1`] = `
         />
         <input
           className="input-key"
+          data-testid="input-key-1"
           onClick={[Function]}
           type="button"
           value="1"
         />
         <input
           className="input-key"
+          data-testid="input-key-2"
           onClick={[Function]}
           type="button"
           value="2"
         />
         <input
           className="input-key"
+          data-testid="input-key-3"
           onClick={[Function]}
           type="button"
           value="3"
         />
         <input
           className="input-key"
+          data-testid="input-key--"
           onClick={[Function]}
           type="button"
           value="-"
@@ -142,24 +158,28 @@ exports[`renders homepage unchanged 1`] = `
         />
         <input
           className="input-key"
+          data-testid="input-key-0"
           onClick={[Function]}
           type="button"
           value="0"
         />
         <input
           className="input-key"
+          data-testid="input-key-."
           onClick={[Function]}
           type="button"
           value="."
         />
         <input
           className="input-key"
+          data-testid="input-key-="
           onClick={[Function]}
           type="button"
           value="="
         />
         <input
           className="input-key"
+          data-testid="input-key-+"
           onClick={[Function]}
           type="button"
           value="+"

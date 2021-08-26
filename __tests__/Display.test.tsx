@@ -35,6 +35,7 @@ describe('Display', () => {
         <Display />
       </DataStreamProvider>
     );
+
     expect(getByTestId("display-expression")).toBeEmptyDOMElement();
     expect(getByTestId("display-result")).toBeEmptyDOMElement();
   });
@@ -50,6 +51,7 @@ describe('Display', () => {
         <Display />
       </DataStreamProvider>
     );
+
     expect(getByTestId("display-expression")).toHaveTextContent('2+2');
     expect(getByTestId("display-result")).toHaveTextContent('4');
   });
@@ -82,6 +84,7 @@ describe('Display', () => {
         <UpdateState />
       </DataStreamProvider>
     );
+    
     expect(getByTestId("display-expression")).toHaveTextContent('2+2');
     expect(getByTestId("display-result")).toBeEmptyDOMElement();
 
