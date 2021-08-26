@@ -8,7 +8,7 @@ const keyLayout =
 	['1',  '2', '3',   '-'],
 	['0',  '.', '=',   '+']];
 
-const functionalKeys = ['=', 'AC', 'Del'];
+export const functionalKeys = ['=', 'AC', 'Del'];
 
 
 function KeyPad(){
@@ -21,7 +21,6 @@ function KeyPad(){
 				<InputKey
 					key={keyLayout[row][index]}
 					char={keyLayout[row][index]}
-					funcKeys = {functionalKeys}
 				/>
 			);
 		}

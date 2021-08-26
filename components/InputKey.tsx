@@ -1,5 +1,11 @@
 import { useContext } from 'react';
 import { DataStream } from '../contexts/DataStream';
+import { functionalKeys } from '../containers/KeyPad';
+
+
+type Props = {
+	char: string;
+};
 
 
 // Evaluates the type of the button, and returns appropriate action to the
@@ -8,8 +14,8 @@ import { DataStream } from '../contexts/DataStream';
 //             the display
 // functional - Performs an action that affects a whole expression (i.e.
 //              All Clear)
-function CheckButtonType(funcKeys: any, char: string){
-	if (funcKeys.includes(char)) {
+function CheckButtonType(char: string){
+	if (functionalKeys.includes(char)) {
 		return {
 			type: "functional",
 			input: char,
@@ -23,16 +29,17 @@ function CheckButtonType(funcKeys: any, char: string){
 	}
 }
 
-function InputKey(props: any){
+function InputKey(props: Props){
 	const dataInput = useContext(DataStream);
 
 	return (
 		<input
 			type="button"
 			className="input-key"
+			data-testid={"input-key-"+props.char}
 			value={props.char}
 			onClick={() => {
-				dataInput.dataDispatch(CheckButtonType(props.funcKeys, props.char))
+				dataInput.dataDispatch(CheckButtonType( props.char))
 			}}
 		/>
 	);
