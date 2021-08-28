@@ -30,9 +30,14 @@ export default {
   // coverageDirectory: undefined,
 
   // An array of regexp pattern strings used to skip coverage collection
-  // coveragePathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  coveragePathIgnorePatterns: [
+    '<rootDir>/node_modules/',
+    '<rootDir>/.next/',
+    '<rootDir>/coverage/lcov-report',
+    '<rootDir>/pages/_app.tsx',
+    'jest.config.ts',
+    'next.config.js',
+  ],
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
