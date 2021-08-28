@@ -31,6 +31,3 @@ There is a shell script in the project's directory at `/scripts/testInDocker.sh`
 ## To-Do
 - Allow text input on expression display
 - Add more operators
-- Add tests:
-    - KeyPad container
-    - Calc container
