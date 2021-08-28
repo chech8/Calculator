@@ -79,7 +79,7 @@ function dataStreamReducer(state: DATATYPE, action: any) {
 			 return output;
 
 		default:
-			throw new Error();
+			throw new Error("Incorrect action type.");
 	}
 }
 
