@@ -32,8 +32,5 @@ There is a shell script in the project's directory at `/scripts/testInDocker.sh`
 - Allow text input on expression display
 - Add more operators
 - Add tests:
-    - CheckButtonType()
     - KeyPad container
     - Calc container
-    - PerformButtonFunction()
-    - dataStreamReducer()
